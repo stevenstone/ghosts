@@ -1,0 +1,220 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.sc-dice-container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+.sc-dice__display {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.sc-dice__options-callout {
+  left: 1rem;
+  position: absolute;
+  top: 4.5rem;
+}
+
+.sc-dice__options-menu {
+  @include fadein-blur-transition;
+
+  background-color: var(--background);
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 15px;
+  left: 1rem;
+  padding: 1rem;
+  position: absolute;
+  top: 7rem;
+  // z-index: 20;
+
+  &.show {
+    z-index: 20;
+  }
+}
+
+.sc-dice__options-callout:hover,
+.sc-dice__options-callout:active {
+  text-decoration: underline;
+}
+
+.sc-dice__options-button {
+  margin-left: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  white-space: nowrap;
+  // width: 50%;
+}
+
+.sc-dice__content {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+}
+
+.sc-dice__history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 80%;
+  width: 100%;
+}
+
+.sc-dice__history-row {
+  height: 20%;
+  width: 100%;
+}
+
+.sc-dice__current {
+  display: flex;
+  min-height: 4.5rem;
+  white-space: nowrap;
+}
+
+.sc-dice__current__rolls,
+.sc-dice__past__rolls {
+  align-items: center;
+  color: var(--primary);
+  display: inline-flex;
+  margin: 1rem 0;
+  overflow-x: scroll;
+  padding: 0;
+  width: 70%;
+  /* enable momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.sc-dice__current__rolls {
+  color: var(--active-rolls-color);
+}
+
+.sc-dice__current__rolls__item,
+.sc-dice__past__rolls__item {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.sc-dice__current__total,
+.sc-dice__past__total {
+  color: var(--primary);
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  position: relative;
+  text-align: center;
+  width: 30%;
+}
+
+.sc-dice__current__total {
+  color: var(--active-rolls-color);
+}
+
+.sc-dice__current__number,
+.sc-dice__past__number {
+  bottom: -0.5rem;
+  font-size: 0.8rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.sc-dice__past__rolls {
+  height: 100%;
+  margin: 0;
+}
+
+.sc-dice__past__total {
+  font-size: 1.5rem;
+}
+
+.sc-dice__buttons {
+  align-items: flex-start;
+  border-top: 1px solid black;
+  // bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 30%;
+  justify-content: space-around;
+  // position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.sc-dice-button {
+  background-color: var(--background);
+  /* flex-basis: 21%; */
+  border-radius: 1rem;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 0px white inset;
+  color: var(--primary);
+  display: block;
+  float: left;
+  font-size: 6vw;
+  height: 22vw;
+  margin: 1vh 1%;
+  transition: box-shadow 0.2s linear;
+  width: 22vw;
+
+  &:active {
+    box-shadow: 0 0 1rem white inset;
+  }
+}
+
+.sc-dice-option {
+  display: block;
+  flex-basis: 100%;
+  margin: 0.5rem 0 1rem;
+
+  input {
+    margin-right: 0.5rem;
+  }
+}
+
+.scroll-ref {
+  background: transparent;
+  /* display inline is one way to remove the bullet point */
+  display: inline;
+}
+
+.lowest,
+.highest {
+  color: var(--uncounted-rolls-color);
+  opacity: 0.6;
+}
+
+.options-transition-enter {
+  display: block;
+  left: -100%;
+  position: absolute;
+  transition: left 0.3s;
+}
+
+.options-transition-enter-active {
+  left: 0;
+  transition: left 0.3s;
+}
+
+.options-transition-exit {
+  left: 0;
+  position: absolute;
+  transition: left 0.3s;
+}
+
+.options-transition-exit-active {
+  left: -100%;
+  transition: left 0.3s;
+}

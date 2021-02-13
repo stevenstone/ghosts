@@ -1,0 +1,40 @@
+@import "../../styles/mixins";
+
+.sc-line-menu {
+  @include fadein-animation;
+  cursor: pointer;
+  height: 2rem;
+  position: relative;
+  transition: all 0.25s;
+  width: 2rem;
+}
+
+.sc-line-menu__top-bun,
+.sc-line-menu__bottom-bun {
+  background: var(--primary);
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform: rotate(0);
+  transition: all 0.25s;
+  width: 1.5rem;
+}
+
+.sc-line-menu__top-bun {
+  top: 45%;
+}
+
+.sc-line-menu__bottom-bun {
+  bottom: 50%;
+  transform: translateY(6px);
+}
+
+.open .sc-line-menu__top-bun {
+  transform: rotate(45deg) translateY(0px);
+}
+
+.open .sc-line-menu__bottom-bun {
+  transform: rotate(-45deg) translateY(0px);
+}

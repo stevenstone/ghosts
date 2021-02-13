@@ -1,0 +1,30 @@
+{
+  "name": "ghosts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.5",
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "history": "^4.10.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "tabletop": "^1.6.3"
+  }
+}

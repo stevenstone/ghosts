@@ -1,0 +1,28 @@
+@import "./animations";
+
+@mixin fadein-animation {
+  animation-duration: 2s;
+  animation-name: fadein;
+}
+
+@mixin fadein-blur-transition {
+  box-shadow: none;
+  filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: box-shadow 0.5s, filter 0.4s, opacity 0.5s;
+
+  &.show {
+    box-shadow: 0 15px 25px var(--primary);
+    filter: blur(0);
+    opacity: 1;
+    pointer-events: auto;
+    // transition: box-shadow 1s, filter 1.5s, opacity 1s;
+  }
+}
+
+@mixin mobile-breakpoint {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

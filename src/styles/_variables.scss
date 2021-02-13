@@ -1,0 +1,18 @@
+:root {
+  --background: #fafafa;
+  --hover-background: #ccc;
+  --primary: #444;
+
+  /* Dice colors */
+  --active-rolls-color: blue;
+  --uncounted-rolls-color: gray;
+}
+
+body.dark {
+  --background: #444;
+  --hover-background: #777;
+  --primary: #fafafa;
+
+  --active-rolls-color: lightblue;
+  --uncounted-rolls-color: lightgray;
+}
